@@ -1,6 +1,6 @@
 # Hi, I'm William Van Eck 👋
 
-I'm a recent Computational Data Science graduate from Penn State with a minor in Mathematics. My interests include data science, machine learning, computer vision, and sports analytics. I enjoy building projects that transform raw data into actionable insights, from computer vision systems for basketball shot detection to large-scale data analysis and AI-driven simulations.
+I'm a recent Computational Data Science graduate from Penn State. My interests include data science, machine learning, computer vision, and sports analytics. I enjoy building projects that transform raw data into actionable insights, from computer vision systems for basketball shot detection to large-scale data analysis and AI-driven simulations.
 
 ### Technical Interests
 
