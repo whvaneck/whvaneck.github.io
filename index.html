@@ -1,18 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>William Van Eck</title>
-</head>
-<body>
-  <h1>William Van Eck</h1>
-  <p>Computation Data Science graduate interested in data analytics, machine learning, and operations.</p>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>William Van Eck | Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-  <h2>Projects</h2>
-  <ul>
-    <li>VisionScorer</li>
-    <li>Flight Analysis</li>
-    <li>Poker Market</li>
-  </ul>
-  
-  <h2>Contact</h2>
-  <p>Email: vaneck.whv@gmail.com</p>
-  <p>LinkedIn: https://www.linkedin.com/in/williamvaneck/</p>
+    body {
+      background: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(15, 23, 42, 0.95);
+      border-bottom: 1px solid #1e293b;
+      z-index: 100;
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #38bdf8;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: #38bdf8;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 5rem 1.5rem;
+    }
+
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 span {
+      color: #38bdf8;
+    }
+
+    .hero h2 {
+      font-size: 1.5rem;
+      color: #94a3b8;
+      margin-bottom: 1.5rem;
+      font-weight: normal;
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: #cbd5e1;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.75rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid #38bdf8;
+      color: #38bdf8;
+      transition: 0.2s;
+    }
+
+    .btn.primary {
+      background: #38bdf8;
+      color: #020617;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #f8fafc;
+    }
+
+    .about p {
+      max-width: 800px;
+      color: #cbd5e1;
+      font-size: 1.05rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: #111827;
+      border: 1px solid #1e293b;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: #38bdf8;
+    }
+
+    .card h3 {
+      color: #38bdf8;
+      margin-bottom: 0.75rem;
+    }
+
+    .card p {
+      color: #cbd5e1;
+      margin-bottom: 1rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      background: #1e293b;
+      color: #bae6fd;
+      padding: 0.35rem 0.65rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .skill {
+      background: #111827;
+      border: 1px solid #1e293b;
+      padding: 0.7rem 1rem;
+      border-radius: 999px;
+      color: #cbd5e1;
+    }
+
+    .experience-item {
+      border-left: 3px solid #38bdf8;
+      padding-left: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .experience-item h3 {
+      color: #f8fafc;
+    }
+
+    .experience-item span {
+      color: #94a3b8;
+      font-size: 0.95rem;
+    }
+
+    .experience-item p {
+      color: #cbd5e1;
+      margin-top: 0.5rem;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      color: #cbd5e1;
+      margin-bottom: 1.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #64748b;
+      border-top: 1px solid #1e293b;
+    }
+
+    @media (max-width: 700px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 75vh;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="logo">William Van Eck</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>Hi, I'm <span>William.</span></h1>
+      <h2>Computational Data Science Graduate</h2>
+      <p>
+        I build data science, machine learning, and computer vision projects that turn raw data into useful insights.
+      </p>
+
+      <div class="buttons">
+        <a href="#projects" class="btn primary">View Projects</a>
+        <a href="resume.pdf" class="btn">Download Resume</a>
+        <a href="https://github.com/YOUR-USERNAME" class="btn">GitHub</a>
+        <a href="https://linkedin.com/in/YOUR-LINKEDIN" class="btn">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2 class="section-title">About Me</h2>
+    <p>
+      I am a Computational Data Science graduate with experience in machine learning,
+      computer vision, data analysis, and large-scale data processing. My interests include
+      sports analytics, AI systems, and building practical tools that solve real-world problems.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Basketball Shot Detection</h3>
+        <p>
+          Built a computer vision system using YOLOv11 to detect players, the basketball,
+          and the hoop in game footage.
+        </p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">YOLOv11</span>
+          <span class="tag">OpenCV</span>
+          <span class="tag">Computer Vision</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>LLM Poker Strategy Benchmark</h3>
+        <p>
+          Compared ChatGPT, Claude, and Gemini in poker simulations using aggressive,
+          conservative, and neutral strategies.
+        </p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">LLMs</span>
+          <span class="tag">Simulation</span>
+          <span class="tag">Analytics</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Flight Delay Analysis</h3>
+        <p>
+          Analyzed BTS flight data from 2015–2020 using Spark to study delays across
+          major airports in Pennsylvania, New York, and New Jersey.
+        </p>
+        <div class="tags">
+          <span class="tag">Spark</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Python</span>
+          <span class="tag">Big Data</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills-list">
+      <span class="skill">Python</span>
+      <span class="skill">R</span>
+      <span class="skill">SQL</span>
+      <span class="skill">Spark</span>
+      <span class="skill">Machine Learning</span>
+      <span class="skill">Computer Vision</span>
+      <span class="skill">PyTorch</span>
+      <span class="skill">OpenCV</span>
+      <span class="skill">Pandas</span>
+      <span class="skill">NumPy</span>
+      <span class="skill">Data Visualization</span>
+      <span class="skill">GitHub</span>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2 class="section-title">Experience</h2>
+
+    <div class="experience-item">
+      <h3>Amazon Flex Associate</h3>
+      <span>Amazon | Current</span>
+      <p>
+        Pick, stage, and sort customer orders in a fast-paced fulfillment environment while
+        managing a flexible shift schedule.
+      </p>
+    </div>
+
+    <div class="experience-item">
+      <h3>Nittany Data Labs</h3>
+      <span>Penn State</span>
+      <p>
+        Worked on data-focused team projects involving analysis, presentations, and tools
+        such as BigQuery.
+      </p>
+    </div>
+
+    <div class="experience-item">
+      <h3>Computational Data Science Student</h3>
+      <span>Penn State University</span>
+      <p>
+        Completed coursework and projects involving machine learning, statistical analysis,
+        programming, and data-driven problem solving.
+      </p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2 class="section-title">Contact</h2>
+    <p>
+      Interested in data science, analytics, machine learning, or sports technology opportunities.
+    </p>
+
+    <div class="buttons" style="justify-content: center;">
+      <a href="mailto:your-email@example.com" class="btn primary">Email Me</a>
+      <a href="https://github.com/YOUR-USERNAME" class="btn">GitHub</a>
+      <a href="https://linkedin.com/in/YOUR-LINKEDIN" class="btn">LinkedIn</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 William Van Eck. Built with HTML and CSS.</p>
+  </footer>
 </body>
+</html>
